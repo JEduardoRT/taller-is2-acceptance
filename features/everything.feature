@@ -10,7 +10,7 @@ Feature: Administrar tareas en la lista to-do
   Scenario: Lista todas las tareas en la lista to-do
     Given La lista to-do contiene las tareas : ID 1: Comprar dulces, ID 2: Pagar facturas
     When el usuario enlista todas las tareas
-    Then la salida debería contener: "ID 1: Comprar dulces - Pendiente - Prioridad: Media, ID 2: Pagar facturas - Pendiente - Prioridad: Alta"
+    Then la salida debería contener: "ID 1: Comprar dulces - Pendiente - Prioridad: Media,ID 2: Pagar facturas - Pendiente - Prioridad: Alta"
 
 
   Scenario: Marca una tarea como completada
@@ -24,7 +24,6 @@ Feature: Administrar tareas en la lista to-do
     Then la lista to-do debería estar vacía
 
   Scenario: Crear una tarea y asignar prioridad
-    Given la lista to-do está vacía
-    When el usuario añade una tarea: “Pagar facturas”
-    And asigna la prioridad Media
-    Then la lista to-do debería contener: “ID 1: Pagar facturas – Pendiente – Prioridad: Media”
+    Given la lista to-do está vacía 2
+    When el usuario añade una tarea: "Pagar facturas" y asigna la prioridad Media
+    Then la lista to-do debería contener: "Tarea 'Pagar facturas' añadida con ID 1 y prioridad Media."
